@@ -4,6 +4,15 @@ import TopBar from "./components/TopBar";
 import {Route, Routes} from "react-router";
 import Home from "./components/Home";
 import Chatroom from "./components/Chatroom";
+import HelloWorld from "./components/HelloWorld";
+
+class App extends Component {
+    render() {
+        return (
+            <HelloWorld/>
+        );
+    }
+}
 
 function App() {
   return (
