@@ -6,14 +6,6 @@ import Home from "./components/Home";
 import Chatroom from "./components/Chatroom";
 import HelloWorld from "./components/HelloWorld";
 
-class App extends Component {
-    render() {
-        return (
-            <HelloWorld/>
-        );
-    }
-}
-
 function App() {
   return (
       <div className={App}>
@@ -22,6 +14,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/chatroom" element={<Chatroom/>}/>
           </Routes>
+          <HelloWorld/>
     </div>
   );
 }
