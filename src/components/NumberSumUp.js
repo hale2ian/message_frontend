@@ -17,14 +17,14 @@ function NumberSumUp(props) {
 
     function cal() {
         let data = JSON.stringify({
-            "start_num": {startNum},
-            "end_num": {endNum}
+            "start_num": Number(startNum),
+            "end_num": Number(endNum)
         });
 
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: BaseUrl+'chat/sum_numbers/',
+            url: BaseUrl + 'chat/sum_numbers/',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -34,6 +34,7 @@ function NumberSumUp(props) {
         axios.request(config)
             .then((response) => {
                 console.log(JSON.stringify(response.data));
+                setResult(response.data.result)
             })
             .catch((error) => {
                 console.log(error);
@@ -47,7 +48,7 @@ function NumberSumUp(props) {
             <p>
                 <button id={"calbtn"} onClick={cal}>Calculate</button>
             </p>
-            <p>Result: {result}</p>
+            <p>Result: <span id={"result"}>{result}</span></p>
         </div>
     );
 }
